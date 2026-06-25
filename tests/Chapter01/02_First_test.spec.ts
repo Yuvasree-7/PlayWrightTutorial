@@ -21,12 +21,27 @@ test('My first test', async ({ page }) => {
     //Validate web page
 
     await expect(page).toHaveTitle(/Playwright by Testers Talk - YouTube/);
+})
+
+test('My Second test', async ({ page }) => {
+    //Go to URL
+   await page.goto('https://www.youtube.com');
+
+    await page.getByPlaceholder('Search')
+              .fill('Take U Forward');
+
+    await page.keyboard.press('Enter');
+    //click on playlist
+    
+    
+    //Validate web page
+
+    await expect(page).toHaveTitle(/Take U Forward/);
 
 
 
 })
 
-//Github Actions Test
 
 
 
